@@ -1,4 +1,4 @@
-"""Hemo-Altura: diagnóstico de anemia infantil con el criterio vigente y el anterior.
+"""Wawa Yawar: diagnóstico de anemia infantil con el criterio vigente y el anterior.
 
 Uso:
     streamlit run app/app.py
@@ -6,11 +6,11 @@ Uso:
 
 import streamlit as st
 
-from hemo_altura.criterios import cambio, diagnosticar
+from wawa_yawar.criterios import cambio, diagnosticar
 
-st.set_page_config(page_title="Hemo-Altura", layout="wide")
+st.set_page_config(page_title="Wawa Yawar", layout="wide")
 
-st.title("Hemo-Altura")
+st.title("Wawa Yawar")
 st.markdown(
     "Diagnóstico de anemia en niñas y niños de 6 a 59 meses con el criterio vigente "
     "(**RM 251-2024-MINSA**, guía OMS 2024) y el anterior (**RM 363-2022-MINSA**), "

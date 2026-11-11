@@ -4,7 +4,7 @@
 flowchart LR
     U[Personal de salud] -->|hemoglobina, edad, altitud| A[App Streamlit<br/>app/app.py]
     U -->|Excel o CSV del padrón| A
-    A --> C[Criterios de diagnóstico<br/>app/hemo_altura/criterios.py<br/>RM 363-2022 y RM 251-2024]
+    A --> C[Criterios de diagnóstico<br/>app/wawa_yawar/criterios.py<br/>RM 363-2022 y RM 251-2024]
     C --> R[Diagnóstico y reporte descargable]
     E[(ENDES 2025, INEI<br/>microdatos)] --> S[scripts/]
     S --> D[(data/procesados<br/>resultados agregados)]

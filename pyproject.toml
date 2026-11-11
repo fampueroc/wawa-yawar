@@ -1,5 +1,5 @@
 [project]
-name = "hemo-altura"
+name = "wawa-yawar"
 version = "0.1.0"
 description = "Diagnóstico de anemia infantil con el criterio vigente y el anterior, ajustado por altitud"
 requires-python = ">=3.11"

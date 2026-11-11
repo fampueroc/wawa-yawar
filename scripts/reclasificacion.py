@@ -9,7 +9,7 @@ la ENDES (estratos HV022, conglomerados HV001, ponderador HV005, linealización 
 - % de niños que dejan de tenerla ("ahora sin anemia"),
 - % que cambia de diagnóstico en cualquier dirección.
 
-El diagnóstico usa app/hemo_altura/criterios.py, el mismo código de la app, y se comprueba que
+El diagnóstico usa app/wawa_yawar/criterios.py, el mismo código de la app, y se comprueba que
 coincide con las variables HC57 y HC57A del INEI.
 
 Uso:
@@ -25,7 +25,7 @@ import pyreadstat
 
 RAIZ = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(RAIZ / "app"))
-from hemo_altura.criterios import diagnosticar  # noqa: E402
+from wawa_yawar.criterios import diagnosticar  # noqa: E402
 
 ORIGINALES = RAIZ / "data" / "originales"
 PROCESADOS = RAIZ / "data" / "procesados"

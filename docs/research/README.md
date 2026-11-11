@@ -1,6 +1,6 @@
 # Conversaciones con usuarios potenciales
 
-Tres conversaciones con personas que podrían usar Hemo-Altura. Los nombres se omiten o se reemplazan por el rol, con su consentimiento.
+Tres conversaciones con personas que podrían usar Wawa Yawar. Los nombres se omiten o se reemplazan por el rol, con su consentimiento.
 
 | # | Rol | Fecha | Notas |
 |---|---|---|---|

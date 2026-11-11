@@ -1,4 +1,4 @@
-"""Las fórmulas de hemo_altura reproducen, niño por niño, la hemoglobina ajustada del INEI (ENDES 2025).
+"""Las fórmulas de wawa_yawar reproducen, niño por niño, la hemoglobina ajustada del INEI (ENDES 2025).
 
 Requiere los microdatos en datos/originales (python scripts/obtener_datos.py).
 """
@@ -9,7 +9,7 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from hemo_altura.criterios import diagnosticar
+from wawa_yawar.criterios import diagnosticar
 
 ORIGINALES = Path(__file__).resolve().parent.parent / "data" / "originales"
 

@@ -1,4 +1,6 @@
-# Hemo-Altura
+# Wawa Yawar
+
+*Wawa yawar*: "la sangre del niño", en quechua.
 
 > **Estado: en desarrollo.** Proyecto final de la Diplomatura de Especialización en Ciencia de Datos para las Ciencias Sociales y la Gestión Pública (Q-Lab PUCP), [issue #204](https://github.com/d2cml-ai/Data-Science-Python/issues/204). Presentación: miércoles 11 de noviembre de 2026. Las secciones marcadas *(en construcción)* se completan antes de esa fecha.
 
@@ -9,7 +11,7 @@
 | Demo (URL pública) | *(en construcción: Streamlit Community Cloud)* |
 | Video de respaldo (60–90 s) | *(en construcción)* |
 | Código de la app | [`app/app.py`](app/app.py) |
-| Criterios de diagnóstico | [`app/hemo_altura/criterios.py`](app/hemo_altura/criterios.py) |
+| Criterios de diagnóstico | [`app/wawa_yawar/criterios.py`](app/wawa_yawar/criterios.py) |
 | Pruebas contra la ENDES | [`tests/test_criterios.py`](tests/test_criterios.py) |
 | Conversaciones con usuarios | [`docs/research/`](docs/research/README.md) |
 | Diagrama de arquitectura | [`docs/arquitectura.md`](docs/arquitectura.md) |
@@ -68,7 +70,7 @@ Con los microdatos de la ENDES 2025, la anemia en niñas y niños de 6 a 35 mese
   uv run streamlit run app/app.py
   ```
 
-- **Validación:** `uv run pytest` comprueba que las fórmulas de [`app/hemo_altura/criterios.py`](app/hemo_altura/criterios.py) reproducen, niño por niño, la hemoglobina ajustada que publica el INEI en la ENDES 2025 (variables HC56 y HC56A). Los microdatos se bajan con `uv run python scripts/obtener_datos.py`.
+- **Validación:** `uv run pytest` comprueba que las fórmulas de [`app/wawa_yawar/criterios.py`](app/wawa_yawar/criterios.py) reproducen, niño por niño, la hemoglobina ajustada que publica el INEI en la ENDES 2025 (variables HC56 y HC56A). Los microdatos se bajan con `uv run python scripts/obtener_datos.py`.
 - **Capturas del flujo principal:** *(en construcción, en `docs/capturas/`).*
 - **Arquitectura:** [`docs/arquitectura.md`](docs/arquitectura.md).
 - **Modelos y APIs:** no usamos un LLM ni APIs de pago. El diagnóstico aplica las fórmulas oficiales de las dos normas, que son deterministas y están validadas contra el INEI; un modelo probabilístico no aporta aquí y podría equivocarse. Además, los datos del padrón no salen hacia terceros.
@@ -111,7 +113,7 @@ Claude Code (Anthropic) generó el código base de la app y de las pruebas a par
 
 ```
 app/                    # app de Streamlit
-  hemo_altura/          # criterios de diagnóstico (RM 363-2022 y RM 251-2024)
+  wawa_yawar/          # criterios de diagnóstico (RM 363-2022 y RM 251-2024)
 data/                   # resultados agregados de la ENDES y límites departamentales
   originales/           # microdatos del INEI (no se suben; ver scripts/obtener_datos.py)
 docs/                   # arquitectura, capturas y research/ con las 3 conversaciones
