@@ -1,0 +1,43 @@
+Los mensajes y las llamadas están cifrados de extremo a extremo. Nadie fuera de este chat, ni siquiera WhatsApp, puede leerlos ni escucharlos.
+[11/11/26, 8:45:44 AM] Tú: Hola (nombre A) qué tal, soy (nombre B), quería pedirte un favor, es solo responder algunas preguntas sobre diagnóstico de anemia en caso hayas tenido alguna exposición sobre el tema, aquí te dejo las preguntas puedes responder las que puedas 🙏🏻🙏🏻
+[11/11/26, 8:46:23 AM] Tú: estoy haciendo un trabajo en el diplomado que estoy llevando y mi trabajo es sobre el diagnóstico de anemia en niños desde RN en adelante. En tu caso, alguna vez te ha tocado hacer ese diagnóstico?, o tienes algun conocimiento de como lo han hecho?, me sería de mucha ayuda.  En caso sí, te compartiré algunas preguntas y me puedes responder por audio si te es más rápido por cada bloque:
+Bloque 1
+- 1. ¿Cuál es tu rol y en qué establecimiento o institución haz presenciado o tienes conocimiento de esto? ¿En qué ciudad o departamento te encontrabas?  ¿Sabes como se realiza este diagnostico en alguna zona con un nivel de altura distinto? 
+- 2. Cuéntame cómo fue el último tamizaje de hemoglobina que hiciste, revisaste o presenciaste, paso a paso: ¿qué equipo usan, dónde lo anotan, aplican el ajuste por altitud?
+- 3. Ese ajuste, ¿se calcula a mano, con una tabla impresa, con el equipo o con el HIS?
+- 4. ¿Cuánto tiempo les toma registrar y consolidar los tamizajes del mes?
+Bloque 2
+- 5. ¿Sabes si existe algún cambio de criterio sobre cómo medirla? ¿Recibieron capacitación o una tabla nueva?
+- 6. ¿Recuerdas algún caso en que el diagnóstico de un niño cambió o generó dudas con la norma nueva? ¿Qué pasó?
+- 7. ¿Alguna vez una cifra de anemia del establecimiento o de la red no cuadró, y hubo que revisarla? ¿Cuánto tiempo tomó?
+Bloque final
+* 8. Si pudieras arreglar una sola cosa del proceso de diagnóstico y registro, ¿cuál sería?
+* 9. ¿Quién decide qué herramientas usan en el establecimiento? ¿Han pagado alguna vez por un software o sistema?
+[11/11/26, 8:46:36 AM] Tú: <sticker omitido>
+[11/11/26, 8:50:34 AM] +51 (########): Hola (nombre B), está bien
+[11/11/26, 9:10:49 AM] Tú: Graciasssss 🙏🏻
+[11/11/26, 9:32:50 AM] +51 (########): 1. Médico,hospitales, el diagnóstico de anemia del recién nacido  se realiza mediante evaluación clínica . En establecimientos de salud se puede solicitar hemograma o hemoglobina de sangre del cordón umbilical, en zonas de altura se debe considerar la adaptación fisiológica.
+2. ⁠ Se evalúa al recién nacido y sus antecedentes perinatales, si existe indicación, se obtiene una muestra de sangre del cordón umbilical, aunque por protocolo siempre se saca un hemograma al recién nacido y ahí se evalúan hemoglobina, hematocrito 
+3. El ajuste no se realiza en recién nacido porque ellos nacen con la hemoglobina más alta y va variando los primeros días , por eso se usa solo tablas de referencia dependiendo horas de vida y edad gestacional 
+4. ⁠el tiempo no es medible porque todo se va al sistema informático 
+5. ⁠Sí, diferenciar  los criterios de anemia infantil de los valores hematológicos neonatales, que varían con las horas de vida y la edad gestacional
+6. ⁠se puede generar dudas si utiliza referencias inadecuadas 
+7. ⁠ Podrían presentarse diferencias por errores al registrar los resultados, utilizar distintos tipos de muestras o por interpretar la hemoglobina con valores de referencia que no corresponden a la edad del recién nacido
+8. ⁠Implementaría una guía específica para el diagnóstico neonatal que considere edad gestacional, horas de vida y altitud.
+9. ⁠Generalmente, la dirección del establecimiento y las autoridades sanitarias, de acuerdo con las normas del MINSA y también depende de los recursos disponibles
+[11/11/26, 9:36:45 AM] - Los mensajes y las llamadas están cifrados de extremo a extremo. Nadie fuera de este chat, ni siquiera WhatsApp, puede leerlos ni escucharlos. Toca para obtener más información.
+[11/11/26, 9:41:56 AM] Tú: graciasss (NOMBRE A) perdona no era desde RN sino desde los 6 meses de RN en adelante,
+[11/11/26, 9:42:16 AM] +51 (########): Uy leí mal
+[11/11/26, 9:42:19 AM] +51 (########): <sticker omitido>
+[11/11/26, 9:43:37 AM] Tú: no no, yo puse RN pero me olvidé especificar que era desde los 6 meses en adelante, igual si alguna de tus respuestas varias considerando que es desde 6 meses en adelante me avisas. Tengo una consulta más, sobre la pregunta 5 de "¿Sabes si existe algún cambio de criterio sobre cómo medirla?" tienen conocimiento sobre cómo se debe considerar la medición cuando están en una zona con una altitud mayor, si deben de hacer algun ajuste ahí?
+[11/11/26, 9:45:23 AM] +51 (########): Si se debe realizar el cálculo :
+Hemoglobina medida - Factor de ajuste ( dependiendo cuanto de altura es ) = Sale la hemoglobina
+[11/11/26, 9:45:26 AM] +51 (########): Es una resta
+[11/11/26, 9:47:28 AM] Tú: ok ok, sobre eso los capacitan o dentro de la parte de los estudios universitarios, practicos les enseñan?
+[11/11/26, 9:53:17 AM] +51 (########): En la universidad como teoría, pero igual en el internado cuando se rota en pediatría, lo mencionan, pero solo lo mencionan porque en Lima no se hace pues
+[11/11/26, 9:59:38 AM] Tú: ok ok dale (NOMBRE A) muchas graciassss 🙏🏻, para finalizar me indicas cuál es tu carrera, y si esto lo has visto en el internado o serum me indicas donde fue
+[11/11/26, 10:23:52 AM] Tú: y una ultima pregunta 🙏🏻 🙏🏻 con esto termino. ¿Sabías o escuchaste que en el 2024 el MINSA cambió la fórmula del ajuste por altura (RM 251-2024)?
+[11/11/26, 10:28:08 AM] +51 (########): Medicina, en el internado
+[11/11/26, 10:31:18 AM] +51 (########): Claro el ajuste es la altura, por eso es dependiendo de la altura en donde se encuentre
+[11/11/26, 10:32:20 AM] Tú:¿Me autorizas a usar tus respuestas en mi trabajo sin tu nombre, solo como "médico(a)"? Y si conoces a alguien que trabaje en un puesto o centro de salud de la sierra, ¿me pasarías su contacto?
+[11/11/26, 10:38:45 AM] +51 (########): sii autorizo, prefiero no compartir contactos de personas que no conozcas
