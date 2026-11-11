@@ -28,14 +28,14 @@
 
 **Fiorella Ampuero.** Trabajo en investigación para el desarrollo, con interés en el desarrollo infantil temprano. En la Tarea 3 del curso recalculé la anemia infantil de la ENDES 2025 con los dos criterios del MINSA y validé mis cifras contra las publicadas por el INEI ([anemia-altitud-peru](https://github.com/fampueroc/anemia-altitud-peru)). Este es un proyecto personal: no representa a mi empleador.
 
-**Cómo cubro el equipo con agentes de IA** *(en construcción)*:
+**Cómo cubro el equipo con agentes de IA:**
 
 | Rol | Quién lo hace |
 |---|---|
 | Producto | Yo: conversaciones con usuarios, priorización del flujo, criterios clínicos de las normas |
 | Ingeniería | Claude Code, con mi revisión y pruebas automáticas contra los microdatos del INEI |
-| Diseño | *(en construcción)* |
-| Ventas | *(en construcción)* |
+| Diseño | Claude Code propone la interfaz en Streamlit y arma el video (grabación de la app con Playwright, voz clonada y subtítulos); yo decido el flujo y los textos, y reviso cada captura |
+| Ventas | Yo: conversaciones con usuarios y presentación; Claude Code redacta borradores (el mensaje para pedir las conversaciones, el guion del video) que yo corrijo |
 
 ## 3. Problema *(en construcción)*
 
@@ -67,10 +67,14 @@ Con los microdatos de la ENDES 2025, la anemia en niñas y niños de 6 a 35 mese
 
 **Insight:** el criterio nuevo no "baja la anemia" en todo el país; mueve el diagnóstico en las dos direcciones según la altitud. Sin una herramienta, ese cambio no se ve en el padrón del establecimiento.
 
-## 5. Why now *(en construcción)*
+## 5. Why now
 
-- La norma cambió en 2024 y el ajuste por altitud es una fórmula cuadrática que no se calcula a mano en un puesto de salud.
-- La ENDES publica la hemoglobina ajustada con los dos criterios (HC56 y HC56A), lo que permite validar la herramienta niño por niño contra el INEI.
+- **La norma es reciente.** La RM 251-2024-MINSA (8 de abril de 2024) aprobó la NTS 213-MINSA/DGIESP-2024, que adopta la guía de la OMS publicada el 5 de marzo de 2024; luego la modificó la RM 429-2024-MINSA. Los establecimientos llevan poco tiempo diagnosticando con ella.
+- **El cambio ya se ve en los registros de los establecimientos, no solo en la encuesta.** Con los datos del SIEN, Hernández-Vásquez y otros (*Acta Médica Peruana*, 2025) encuentran que en zonas de 3500 m o más la anemia baja de 31,3 % a 15,8 %, que entre 500 y 2500 m sube, y que hay distritos que cambian de categoría.
+- **El ajuste nuevo no se calcula a mano.** Es una fórmula cuadrática desde 500 m, con un punto de corte distinto según la edad.
+- **Ya se puede validar contra el INEI.** La ENDES publica la hemoglobina ajustada con los dos criterios (HC56 y HC56A), y la app reproduce esas variables niño por niño.
+
+Fuentes completas en la [revisión de literatura de la Tarea 3](https://github.com/fampueroc/anemia-altitud-peru/blob/main/docs/literatura.md).
 
 ## 6. Demo *(en construcción)*
 
@@ -100,17 +104,26 @@ Con los microdatos de la ENDES 2025, la anemia en niñas y niños de 6 a 35 mese
 - **Arquitectura:** [`docs/arquitectura.md`](docs/arquitectura.md).
 - **Modelos y APIs:** no usamos un LLM ni APIs de pago. El diagnóstico aplica las fórmulas oficiales de las dos normas, que son deterministas y están validadas contra el INEI; un modelo probabilístico no aporta aquí y podría equivocarse. Además, los datos del padrón no salen hacia terceros.
 
-## 7. Modelo de negocio *(en construcción)*
+## 7. Modelo de negocio
 
 Propuesta inicial, por validar con las conversaciones (máximo tres planes):
 
 | Plan | Para quién | Qué incluye | Precio |
 |---|---|---|---|
-| Gratis | Cualquier establecimiento | Diagnóstico de un niño a la vez | S/ 0 |
-| Establecimiento | Puesto o centro de salud | Revisa tu padrón | *(en construcción)* |
-| Red / DIRESA | Redes de salud y DIRESA | Varios establecimientos y reporte consolidado | *(en construcción)* |
+| Gratis | Cualquier establecimiento | Diagnóstico de un niño a la vez y la pestaña El Perú | S/ 0 |
+| Establecimiento | Puesto o centro de salud | Revisa tu padrón y reporte en Excel | S/ 30 al mes |
+| Red / DIRESA | Redes de salud y DIRESA | Todos sus establecimientos y reporte consolidado | S/ 20 al mes por establecimiento |
 
-**Costo por usuario:** sin tokens ni APIs de pago; solo el servidor. Monto y margen de contribución: *(en construcción)*.
+**Por qué hay un plan gratis.** El diagnóstico de un niño a la vez no deja ganancia, pero permite que el personal de salud conozca la app y confíe en ella. La ganancia viene de quienes necesitan revisar padrones completos: los establecimientos y las redes. Quién decide las herramientas es "la dirección del establecimiento y las autoridades sanitarias" ([conversación 1](docs/research/conversacion_1.md)), y por eso los planes de pago son para ellos.
+
+**Lo que no haremos:** ni publicidad ni venta de datos. Los padrones tienen datos de salud de niños, protegidos por la Ley 29733 de Protección de Datos Personales, y la app no los guarda: se procesan en memoria.
+
+**Costos.** La app no usa tokens ni APIs de pago: el diagnóstico es un cálculo con fórmulas, así que atender a un establecimiento más casi no cuesta nada.
+
+- **Costo fijo:** el demo corre gratis en Streamlit Community Cloud, pero los padrones tienen datos de salud de niños, así que la versión de pago iría en un servidor propio: un Droplet Basic de 2 GiB de DigitalOcean cuesta USD 12 al mes ([precios](https://www.digitalocean.com/pricing/droplets), consultado el 11-nov-2026), unos **S/ 41 al mes** con un tipo de cambio de S/ 3,418 por dólar (venta, sistema bancario SBS; BCRP, serie PD04640PD, 9-nov-2026).
+- **Costo variable por usuario:** prácticamente S/ 0 (el padrón se procesa en memoria y no se guarda).
+
+**Margen de contribución** (precio menos costo variable): cerca de S/ 30 al mes por establecimiento en el plan Establecimiento y S/ 20 en el plan Red, casi el 100 % del precio. Con **2 establecimientos** se cubre el servidor. El costo que de verdad pesa es mi tiempo: estimo unas **3 horas de capacitación por establecimiento**, una sola vez, para que apliquen bien la app *(análisis de costo y punto de equilibrio en preparación)*.
 
 ## 8. Herramientas del curso
 
@@ -128,7 +141,13 @@ Propuesta inicial, por validar con las conversaciones (máximo tres planes):
 | Descarga de datos públicos | 03 | [`scripts/obtener_datos.py`](scripts/obtener_datos.py) | Baja los microdatos de la ENDES 2025 del portal del INEI. |
 | GeoPandas | 06 | [`scripts/preparar_mapa.py`](scripts/preparar_mapa.py) | Arma los 26 ámbitos que usa el INEI (con Lima Metropolitana y Lima Provincias por separado) a partir de los límites provinciales. |
 
-**Para el video de respaldo** *(en construcción)*: narración con mi voz clonada (texto a tu voz, sesión 15) y subtítulos con Whisper (sesión 13), con el mismo flujo del reel de la Tarea 3.
+**Para el video de respaldo** ([`video/`](video/README.md)):
+
+| Herramienta | Sesión | Archivo | Para qué |
+|---|---|---|---|
+| Texto a tu voz (Qwen3-TTS) | 15 | [`video/narrar.py`](video/narrar.py) | Narra el guion con mi voz clonada, sin grabar cada toma. |
+| Whisper | 13 | [`video/narrar.py`](video/narrar.py) | Subtítulos palabra por palabra y control de calidad de la voz. |
+| Playwright | — | [`video/grabar.py`](video/grabar.py) | Graba la app pública en uso, con la duración exacta de cada frase. |
 
 ## 9. Qué hizo el agente
 

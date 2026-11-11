@@ -7,3 +7,6 @@ data/originales/*
 !data/originales/.gitkeep
 # Claves y variables locales
 .env
+
+# video: audio, grabación y salidas (se generan con video/*.py)
+video/salidas/
