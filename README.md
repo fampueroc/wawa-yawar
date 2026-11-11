@@ -111,8 +111,8 @@ Propuesta inicial, por validar con las conversaciones (máximo tres planes):
 | Plan | Para quién | Qué incluye | Precio |
 |---|---|---|---|
 | Gratis | Cualquier establecimiento | Diagnóstico de un niño a la vez y la pestaña El Perú | S/ 0 |
-| Establecimiento | Puesto o centro de salud | Revisa tu padrón y reporte en Excel | S/ 30 al mes |
-| Red / DIRESA | Redes de salud y DIRESA | Todos sus establecimientos y reporte consolidado | S/ 20 al mes por establecimiento |
+| Establecimiento | Puesto o centro de salud | Revisa tu padrón y reporte en Excel | S/ 30 al mes + S/ 200 de implementación |
+| Red / DIRESA | Redes de salud y DIRESA | Todos sus establecimientos, reporte consolidado y capacitación por grupos | S/ 20 al mes por establecimiento + S/ 200 de implementación por establecimiento |
 
 **Por qué hay un plan gratis.** El diagnóstico de un niño a la vez no deja ganancia, pero permite que el personal de salud conozca la app y confíe en ella. La ganancia viene de quienes necesitan revisar padrones completos: los establecimientos y las redes. Quién decide las herramientas es "la dirección del establecimiento y las autoridades sanitarias" ([conversación 1](docs/research/conversacion_1.md)), y por eso los planes de pago son para ellos.
 
@@ -123,7 +123,9 @@ Propuesta inicial, por validar con las conversaciones (máximo tres planes):
 - **Costo fijo:** el demo corre gratis en Streamlit Community Cloud, pero los padrones tienen datos de salud de niños, así que la versión de pago iría en un servidor propio: un Droplet Basic de 2 GiB de DigitalOcean cuesta USD 12 al mes ([precios](https://www.digitalocean.com/pricing/droplets), consultado el 11-nov-2026), unos **S/ 41 al mes** con un tipo de cambio de S/ 3,418 por dólar (venta, sistema bancario SBS; BCRP, serie PD04640PD, 9-nov-2026).
 - **Costo variable por usuario:** prácticamente S/ 0 (el padrón se procesa en memoria y no se guarda).
 
-**Margen de contribución** (precio menos costo variable): cerca de S/ 30 al mes por establecimiento en el plan Establecimiento y S/ 20 en el plan Red, casi el 100 % del precio. Con **2 establecimientos** se cubre el servidor. El costo que de verdad pesa es mi tiempo: estimo unas **3 horas de capacitación por establecimiento**, una sola vez, para que apliquen bien la app *(análisis de costo y punto de equilibrio en preparación)*.
+**Margen de contribución** (precio menos costo variable): cerca de S/ 30 al mes por establecimiento en el plan Establecimiento y S/ 20 en el plan Red, casi el 100 % del precio. Con **2 establecimientos** se cubre el servidor. 
+
+**Análisis de costo.** El costo que de verdad pesa es mi tiempo. Lo valoro en S/ 65 por hora (mi costo de oportunidad). Capacitar un establecimiento para que aplique bien la app toma unas 3 horas (S/ 195), así que se cobra una **implementación única de S/ 200 por establecimiento**. En el plan Red, la capacitación es por grupos de establecimientos, lo que baja el costo por establecimiento. Con eso, la mensualidad es casi toda margen y el servidor (S/ 41 al mes) se cubre con 2 establecimientos.
 
 ## 8. Herramientas del curso
 
