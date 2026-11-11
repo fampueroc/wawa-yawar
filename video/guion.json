@@ -1,0 +1,48 @@
+{
+  "titulo": "Wawa Yawar",
+  "estado": "BORRADOR: falta la revisión de la autora",
+  "formato": "horizontal 1920x1080: grabación de la app pública (https://wawa-yawar.streamlit.app/) con la narración en voz clonada y subtítulos",
+  "escenas": [
+    {
+      "frase": "En abril del dos mil veinticuatro, el Ministerio de Salud cambió la forma de diagnosticar la anemia infantil: ahora la hemoglobina se corrige de otra manera según la altitud.",
+      "pantalla": "Portada: Wawa Yawar y la norma (RM 251-2024-MINSA)",
+      "fuente": "RM 251-2024-MINSA, 8-abr-2024 (Tarea 3, docs/literatura.md)"
+    },
+    {
+      "frase": "Con la ENDES dos mil veinticinco, uno de cada ocho niños de seis a treinta y cinco meses cambia de diagnóstico. En la sierra alta, muchos dejan de tener anemia; en los valles, otros pasan a tenerla.",
+      "pantalla": "Pestaña El Perú: gráfico por altitud",
+      "fuente": "data/procesados/reclasificacion_altitud_2025.csv: Perú 12,1 % cambia; 3500 m o más 24,5 % ahora sin; 500-2499 m 8,2-8,9 % ahora con"
+    },
+    {
+      "frase": "Wawa Yawar ayuda a los puestos de salud de la sierra y la selva alta a diagnosticar con la norma vigente.",
+      "pantalla": "Encabezado de la app",
+      "fuente": "One-liner del README"
+    },
+    {
+      "frase": "Por ejemplo, una niña de catorce meses que vive a tres mil ochocientos veinticinco metros, con trece coma ocho de hemoglobina: con la norma anterior tenía anemia; con la vigente, ya no.",
+      "pantalla": "Pestaña Un niño, con los valores por defecto",
+      "fuente": "docs/capturas/1_un_nino.png"
+    },
+    {
+      "frase": "El establecimiento también puede subir todo su padrón. En este ejemplo del valle de Cajamarca, con sesenta niños reales de la ENDES, cinco pasan a tener anemia. La app los pone primero y descarga el reporte en Excel.",
+      "pantalla": "Pestaña Revisa tu padrón: elegir Cajamarca (valle), bajar por la tabla, botón de descarga",
+      "fuente": "data/ejemplo/padron_cajamarca.csv; docs/capturas/2_padron.png"
+    },
+    {
+      "frase": "Y en el mapa se ve en qué departamentos cambia más el diagnóstico.",
+      "pantalla": "Pestaña El Perú: mapa, pasar el cursor por Puno",
+      "fuente": "data/procesados/reclasificacion_departamento_2025.csv"
+    },
+    {
+      "frase": "Las fórmulas reproducen, niño por niño, la hemoglobina ajustada que publica el INEI. La app no reemplaza el criterio del personal de salud: le muestra qué niños cambian de diagnóstico. Pruébala en wawa yawar punto streamlit punto app.",
+      "pantalla": "Cierre: URL y créditos",
+      "fuente": "tests/test_criterios.py (HC56 y HC56A)"
+    }
+  ],
+  "creditos": [
+    "Datos: INEI, ENDES 2025, niñas y niños de 6 a 35 meses",
+    "Criterios: MINSA, RM 251-2024 y RM 363-2022; OMS (2024)",
+    "Producto y voz: Fiorella Ampuero",
+    "Voz generada con IA (Qwen3-TTS) a partir de mi voz"
+  ]
+}
