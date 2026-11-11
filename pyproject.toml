@@ -1,0 +1,12 @@
+[project]
+name = "hemo-altura"
+version = "0.1.0"
+description = "Diagnóstico de anemia infantil con el criterio vigente y el anterior, ajustado por altitud"
+requires-python = ">=3.11"
+dependencies = ["streamlit", "pandas", "numpy", "plotly", "folium", "streamlit-folium", "openpyxl"]
+
+[dependency-groups]
+dev = ["pytest", "pyreadstat"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
