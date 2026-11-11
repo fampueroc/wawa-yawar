@@ -1,7 +1,7 @@
 """Hemo-Altura: diagnóstico de anemia infantil con el criterio vigente y el anterior.
 
 Uso:
-    streamlit run app.py
+    streamlit run app/app.py
 """
 
 import streamlit as st

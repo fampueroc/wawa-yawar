@@ -22,7 +22,7 @@ ENCUESTAS = {2025: 1038, 2024: 968}
 MODULOS = {1629: "caracteristicas_hogar", 1638: "peso_talla_anemia"}
 ANIO = int(sys.argv[1]) if len(sys.argv) > 1 else 2025
 ENCUESTA = ENCUESTAS[ANIO]
-ORIGINALES = Path(__file__).resolve().parent.parent / "datos" / "originales"
+ORIGINALES = Path(__file__).resolve().parent.parent / "data" / "originales"
 DESTINO = ORIGINALES if ANIO == 2025 else ORIGINALES / f"endes_{ANIO}"
 
 

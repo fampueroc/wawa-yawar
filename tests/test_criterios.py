@@ -11,7 +11,7 @@ import pytest
 
 from hemo_altura.criterios import diagnosticar
 
-ORIGINALES = Path(__file__).resolve().parent.parent / "datos" / "originales"
+ORIGINALES = Path(__file__).resolve().parent.parent / "data" / "originales"
 
 
 def leer(nombre, columnas=None):

@@ -9,4 +9,4 @@ dependencies = ["streamlit", "pandas", "numpy", "plotly", "folium", "streamlit-f
 dev = ["pytest", "pyreadstat"]
 
 [tool.pytest.ini_options]
-pythonpath = ["."]
+pythonpath = ["app"]

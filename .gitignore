@@ -3,7 +3,7 @@ __pycache__/
 .ipynb_checkpoints/
 .pytest_cache/
 # Microdatos del INEI: se vuelven a bajar con scripts/obtener_datos.py
-datos/originales/*
-!datos/originales/.gitkeep
+data/originales/*
+!data/originales/.gitkeep
 # Claves y variables locales
 .env
