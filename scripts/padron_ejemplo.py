@@ -1,7 +1,7 @@
 """Arma padrones de tamizaje de ejemplo con niños reales de la ENDES 2025 (datos públicos y anónimos).
 
 Cada padrón toma una muestra aleatoria (semilla fija) de niñas y niños de 6 a 35 meses de un
-departamento, con su hemoglobina observada (HC53), su edad (HC1) y la altitud de su conglomerado
+departamento (en Cajamarca, solo los que viven entre 500 y 2499 m, como un establecimiento de valle), con su hemoglobina observada (HC53), su edad (HC1) y la altitud de su conglomerado
 (HV040). El código de cada niño es ficticio y no se guarda ningún otro dato de la encuesta.
 
 Uso:
@@ -16,14 +16,15 @@ sys.path.insert(0, str(RAIZ / "scripts"))
 from reclasificacion import cargar  # noqa: E402
 
 DESTINO = RAIZ / "data" / "ejemplo"
-PADRONES = {"puno": 21, "cajamarca": 6}  # código del ámbito departamental
+# nombre: (código del ámbito departamental, altitud mínima, altitud máxima)
+PADRONES = {"puno": (21, 0, 10000), "cajamarca": (6, 500, 2499)}
 N = 60
 
 if __name__ == "__main__":
     DESTINO.mkdir(parents=True, exist_ok=True)
     d = cargar()
-    for nombre, codigo in PADRONES.items():
-        m = d[d.AMBITO == codigo].sample(N, random_state=20261111)
+    for nombre, (codigo, desde, hasta) in PADRONES.items():
+        m = d[(d.AMBITO == codigo) & d.HV040.between(desde, hasta)].sample(N, random_state=20261111)
         p = m.assign(
             hemoglobina_g_dl=(m.HC53 / 10).round(1),
             edad_meses=m.HC1.astype(int),
