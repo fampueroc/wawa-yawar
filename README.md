@@ -8,7 +8,7 @@
 
 | Entregable | Enlace |
 |---|---|
-| Demo (URL pública) | *(en construcción: Streamlit Community Cloud)* |
+| Demo (URL pública) | **https://wawa-yawar.streamlit.app/** |
 | Video de respaldo (60–90 s) | *(en construcción)* |
 | Código de la app | [`app/app.py`](app/app.py) |
 | Criterios de diagnóstico | [`app/wawa_yawar/criterios.py`](app/wawa_yawar/criterios.py) |
@@ -74,7 +74,7 @@ Con los microdatos de la ENDES 2025, la anemia en niñas y niños de 6 a 35 mese
 
 ## 6. Demo *(en construcción)*
 
-- **URL pública:** *(en construcción: Streamlit Community Cloud).*
+- **URL pública:** https://wawa-yawar.streamlit.app/ (Streamlit Community Cloud)
 - **Video de respaldo:** *(en construcción).*
 - **Correr en local:**
 
