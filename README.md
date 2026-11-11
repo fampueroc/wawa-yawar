@@ -16,7 +16,7 @@
 
 ## 1. One-liner
 
-**Hacemos el diagnóstico de anemia infantil con el criterio vigente para los puestos de salud de la sierra y la selva alta, mediante una app que ajusta la hemoglobina por altitud y reclasifica su padrón de tamizajes.**
+**Ayudamos a los puestos de salud de la sierra y la selva alta a diagnosticar la anemia infantil con la norma vigente: la app corrige la hemoglobina según la altitud y revisa todo su padrón de tamizajes.**
 
 ## 2. Founder
 
@@ -87,10 +87,21 @@ Propuesta inicial, por validar con las conversaciones (máximo tres planes):
 
 ## 8. Herramientas del curso
 
+**Dentro del producto** (lo que usa el personal de salud):
+
 | Herramienta | Sesión | Archivo | Por qué esta |
 |---|---|---|---|
 | Dashboard en Streamlit | 05 | [`app/app.py`](app/app.py) | Quien la usa es personal de salud, no programador: necesita un formulario y un botón para subir su padrón. |
 | Mapa con Folium | 06 | *(en construcción)* | El problema es territorial: el cambio de diagnóstico depende de la altitud donde vive el niño. |
+
+**Para preparar los datos:**
+
+| Herramienta | Sesión | Archivo | Para qué |
+|---|---|---|---|
+| Descarga de datos públicos | 03 | [`scripts/obtener_datos.py`](scripts/obtener_datos.py) | Baja los microdatos de la ENDES 2025 del portal del INEI. |
+| GeoPandas | 06 | [`scripts/preparar_mapa.py`](scripts/preparar_mapa.py) | Arma los 26 ámbitos que usa el INEI (con Lima Metropolitana y Lima Provincias por separado) a partir de los límites provinciales. |
+
+**Para el video de respaldo** *(en construcción)*: narración con mi voz clonada (texto a tu voz, sesión 15) y subtítulos con Whisper (sesión 13), con el mismo flujo del reel de la Tarea 3.
 
 ## 9. Qué hizo el agente *(en construcción)*
 

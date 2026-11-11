@@ -6,7 +6,11 @@ requires-python = ">=3.11"
 dependencies = ["streamlit", "pandas", "numpy", "plotly", "folium", "streamlit-folium", "openpyxl"]
 
 [dependency-groups]
-dev = ["pytest", "pyreadstat"]
+dev = [
+    "pytest",
+    "pyreadstat",
+    "geopandas>=1.2.0",
+]
 
 [tool.pytest.ini_options]
 pythonpath = ["app"]
