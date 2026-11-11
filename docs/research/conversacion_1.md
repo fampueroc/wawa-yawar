@@ -1,17 +1,18 @@
 # Conversación 1 *(pendiente)*
 
 - **Rol:** 
+- **Establecimiento o institución (sin nombre) y altitud aproximada:** 
 - **Fecha y medio:** 
-- **Consentimiento para usar las notas:** 
+- **Autorizó usar estas notas sin su nombre:** 
 
-## Preguntas
+Preguntas: ver la [guía](guia_conversaciones.md).
 
-1. ¿Cómo diagnostican hoy la anemia en el establecimiento? ¿Quién aplica el ajuste por altitud y cómo?
-2. ¿Qué cambió en su trabajo con la RM 251-2024? ¿Qué dudas o errores han visto?
-3. ¿Cuánto tiempo les toma el tamizaje y el registro? ¿Dónde se pierde tiempo?
-4. ¿Cuál fue la última vez que un diagnóstico de anemia les generó un problema?
-5. ¿Usarían una herramienta así? ¿Quién debería pagarla?
+## Cómo lo hacen hoy
 
-## Notas
+## Qué cambió con la RM 251-2024
+
+## Números concretos (horas, niños por mes, errores)
+
+## Frases textuales
 
 ## Lo que aprendí

@@ -118,9 +118,20 @@ Propuesta inicial, por validar con las conversaciones (máximo tres planes):
 
 **Para el video de respaldo** *(en construcción)*: narración con mi voz clonada (texto a tu voz, sesión 15) y subtítulos con Whisper (sesión 13), con el mismo flujo del reel de la Tarea 3.
 
-## 9. Qué hizo el agente *(en construcción)*
+## 9. Qué hizo el agente
 
-Claude Code (Anthropic) generó el código base de la app y de las pruebas a partir de los scripts de la Tarea 3, bajo mi revisión. Detalle por archivo: *(en construcción)*.
+Trabajé con Claude Code (Anthropic) como socio técnico. Las decisiones de producto fueron mías: el problema, el usuario, las funciones, qué padrones de ejemplo usar, el nombre y cómo redactar los hallazgos. Claude Code escribió la mayor parte del código; yo lo revisé y lo probé en la app.
+
+| Parte del repo | Qué hizo Claude Code | Qué hice yo |
+|---|---|---|
+| [`app/wawa_yawar/criterios.py`](app/wawa_yawar/criterios.py) | Pasó a un módulo las fórmulas de las dos normas que ya había programado en la Tarea 3 | Elegí las normas y validé las fórmulas en la Tarea 3 |
+| [`app/wawa_yawar/padron.py`](app/wawa_yawar/padron.py) y [`app/app.py`](app/app.py) | Escribió la app, la lectura flexible del padrón, el reporte en Excel y el mapa | Definí las pestañas y el flujo; revisé los resultados en la app |
+| [`scripts/reclasificacion.py`](scripts/reclasificacion.py) | Escribió el cálculo de cuántos niños cambian de diagnóstico, con el diseño muestral de la Tarea 3 | Aprobé la pregunta y revisé las cifras |
+| [`scripts/padron_ejemplo.py`](scripts/padron_ejemplo.py) | Armó los padrones de ejemplo con niños reales de la ENDES | Elegí Puno y Cajamarca (valle) para mostrar los dos sentidos del cambio |
+| [`tests/`](tests/) | Escribió las pruebas: las fórmulas reproducen la hemoglobina ajustada del INEI en todos los niños | Revisé que la prueba compare contra las variables del INEI |
+| README y [`docs/`](docs/) | Redactó los borradores | Corregí el tono, el one-liner y el nombre; hice las conversaciones con usuarios |
+
+**Reutilizado de la Tarea 3** ([anemia-altitud-peru](https://github.com/fampueroc/anemia-altitud-peru)): [`scripts/obtener_datos.py`](scripts/obtener_datos.py), [`scripts/preparar_mapa.py`](scripts/preparar_mapa.py) y [`data/ambitos.geojson`](data/ambitos.geojson).
 
 ## Estructura del repo
 
