@@ -55,10 +55,11 @@ with tab_nino:
     r = diagnosticar(hb, altitud, edad)
     a363, aoms = bool(r["anemia_363"]), bool(r["anemia_oms"])
     k1, k2 = st.columns(2)
-    k1.metric("Norma anterior (RM 363-2022)", "Anemia" if a363 else "Sin anemia",
-              f"Hb corregida {num(float(r['hb_ajustada_363']))} g/dL", delta_color="off")
-    k2.metric("Norma vigente (RM 251-2024)", "Anemia" if aoms else "Sin anemia",
-              f"Hb corregida {num(float(r['hb_ajustada_oms']))} g/dL", delta_color="off")
+    k1.metric("Norma anterior (RM 363-2022)", "Anemia" if a363 else "Sin anemia")
+    k1.caption(f"Hemoglobina corregida por altitud: **{num(float(r['hb_ajustada_363']))} g/dL** (corte: 11,0)")
+    k2.metric("Norma vigente (RM 251-2024)", "Anemia" if aoms else "Sin anemia")
+    k2.caption(f"Hemoglobina corregida por altitud: **{num(float(r['hb_ajustada_oms']))} g/dL** "
+               f"(corte: {'10,5' if edad < 24 else '11,0'})")
     etiqueta = str(cambio(a363, aoms))
     if etiqueta in ("Ahora con anemia", "Ahora sin anemia"):
         st.warning(f"**{etiqueta}**: el diagnóstico cambia con la norma vigente.")
@@ -117,7 +118,16 @@ with tab_padron:
             c = {"Ahora con anemia": "background-color: #fde2d4", "Ahora sin anemia": "background-color: #dbe6fd"}
             return [c.get(fila.cambio, "")] * len(fila)
 
-        st.dataframe(vista.style.apply(color, axis=1), hide_index=True, use_container_width=True)
+        decimal = st.column_config.NumberColumn
+        st.dataframe(vista.style.apply(color, axis=1), hide_index=True, use_container_width=True, column_config={
+            "codigo": "Código", "observacion": "Observación", "cambio": "Cambio de diagnóstico",
+            "hemoglobina_g_dl": decimal("Hb observada (g/dL)", format="%.1f"),
+            "edad_meses": decimal("Edad (meses)", format="%d"),
+            "altitud_m": decimal("Altitud (m)", format="%d"),
+            "hb_corregida_anterior": decimal("Hb corregida, norma anterior", format="%.1f"),
+            "hb_corregida_vigente": decimal("Hb corregida, norma vigente", format="%.1f"),
+            "anemia_norma_anterior": "Anemia, norma anterior", "anemia_norma_vigente": "Anemia, norma vigente",
+        })
 
         resumen = pd.DataFrame({
             "Indicador": ["Archivo", "Niños revisados", "Con datos por revisar",
@@ -148,7 +158,7 @@ with tab_peru:
                     error_y=dict(type="data", symmetric=False, array=franjas[f"{col}_ls"] - franjas[col],
                                  arrayminus=franjas[col] - franjas[f"{col}_li"].clip(lower=0)))
     fig.update_layout(barmode="group", yaxis_title="% de niños de 6 a 35 meses", xaxis_title="Altitud donde vive",
-                      legend=dict(orientation="h", y=1.12), margin=dict(t=30, b=10), height=400)
+                      legend=dict(orientation="h", y=1.12), margin=dict(t=30, b=10), height=520)
 
     c1, c2 = st.columns(2)
     with c1:
@@ -161,13 +171,13 @@ with tab_peru:
             fila = valores.loc[f["properties"]["ambito"]]
             f["properties"]["texto"] = (f"{num(fila.cambia)} % cambia de diagnóstico "
                                         f"({num(fila.ahora_con)} % ahora con anemia, {num(fila.ahora_sin)} % ahora sin)")
-        mapa = folium.Map(location=[-9.2, -75.0], zoom_start=5, tiles="OpenStreetMap")
+        mapa = folium.Map(location=[-9.6, -75.0], zoom_start=5, tiles="OpenStreetMap")
         folium.Choropleth(geo_data=geo, data=dep, columns=["dominio", "cambia"], key_on="feature.properties.ambito",
                           fill_color="OrRd", fill_opacity=0.8, line_opacity=0.4,
-                          legend_name="% de niños que cambia de diagnóstico").add_to(mapa)
+                          legend_name="% que cambia de diagnóstico").add_to(mapa)
         folium.GeoJson(geo, style_function=lambda _: {"fillOpacity": 0, "weight": 0},
                        tooltip=folium.GeoJsonTooltip(["ambito", "texto"], aliases=["", ""])).add_to(mapa)
-        st_folium(mapa, height=400, use_container_width=True, returned_objects=[])
+        st_folium(mapa, height=520, use_container_width=True, returned_objects=[])
     st.caption("Fuente: INEI, ENDES 2025, microdatos. Cálculo propio con el diseño muestral de la encuesta; reproduce "
                "las cifras de anemia que publica el INEI. Lima Metropolitana y Lima Provincias van por separado. "
                "Es descriptivo: muestra cuánto cambia la clasificación, no cuál criterio es mejor.")

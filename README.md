@@ -84,7 +84,19 @@ Con los microdatos de la ENDES 2025, la anemia en niñas y niños de 6 a 35 mese
   ```
 
 - **Validación:** `uv run pytest` comprueba que las fórmulas de [`app/wawa_yawar/criterios.py`](app/wawa_yawar/criterios.py) reproducen, niño por niño, la hemoglobina ajustada que publica el INEI en la ENDES 2025 (variables HC56 y HC56A). Los microdatos se bajan con `uv run python scripts/obtener_datos.py`.
-- **Capturas del flujo principal:** *(en construcción, en `docs/capturas/`).*
+- **Capturas del flujo principal:**
+
+  1. **Un niño:** a 3825 m y con 14 meses, una hemoglobina de 13,8 g/dL era anemia con la norma anterior y ya no lo es con la vigente.
+
+     ![Un niño](docs/capturas/1_un_nino.png)
+
+  2. **Revisa tu padrón:** en el padrón de ejemplo de Cajamarca (valle), 5 de 60 niños pasan a tener anemia con la norma vigente.
+
+     ![Revisa tu padrón](docs/capturas/2_padron.png)
+
+  3. **El Perú:** cuántos niños cambian de diagnóstico por altitud y por departamento (ENDES 2025).
+
+     ![El Perú](docs/capturas/3_peru.png)
 - **Arquitectura:** [`docs/arquitectura.md`](docs/arquitectura.md).
 - **Modelos y APIs:** no usamos un LLM ni APIs de pago. El diagnóstico aplica las fórmulas oficiales de las dos normas, que son deterministas y están validadas contra el INEI; un modelo probabilístico no aporta aquí y podría equivocarse. Además, los datos del padrón no salen hacia terceros.
 
@@ -129,7 +141,7 @@ Trabajé con Claude Code (Anthropic) como socio técnico. Las decisiones de prod
 | [`scripts/reclasificacion.py`](scripts/reclasificacion.py) | Escribió el cálculo de cuántos niños cambian de diagnóstico, con el diseño muestral de la Tarea 3 | Aprobé la pregunta y revisé las cifras |
 | [`scripts/padron_ejemplo.py`](scripts/padron_ejemplo.py) | Armó los padrones de ejemplo con niños reales de la ENDES | Elegí Puno y Cajamarca (valle) para mostrar los dos sentidos del cambio |
 | [`tests/`](tests/) | Escribió las pruebas: las fórmulas reproducen la hemoglobina ajustada del INEI en todos los niños | Revisé que la prueba compare contra las variables del INEI |
-| README y [`docs/`](docs/) | Redactó los borradores | Corregí el tono, el one-liner y el nombre; hice las conversaciones con usuarios |
+| README y [`docs/`](docs/) | Redactó los borradores | Corregí el tono, el one-liner y el nombre; hago las conversaciones con usuarios |
 
 **Reutilizado de la Tarea 3** ([anemia-altitud-peru](https://github.com/fampueroc/anemia-altitud-peru)): [`scripts/obtener_datos.py`](scripts/obtener_datos.py), [`scripts/preparar_mapa.py`](scripts/preparar_mapa.py) y [`data/ambitos.geojson`](data/ambitos.geojson).
 
