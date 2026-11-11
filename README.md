@@ -12,7 +12,9 @@
 | Video de respaldo (60–90 s) | *(en construcción)* |
 | Código de la app | [`app/app.py`](app/app.py) |
 | Criterios de diagnóstico | [`app/wawa_yawar/criterios.py`](app/wawa_yawar/criterios.py) |
-| Pruebas contra la ENDES | [`tests/test_criterios.py`](tests/test_criterios.py) |
+| Revisión del padrón | [`app/wawa_yawar/padron.py`](app/wawa_yawar/padron.py) |
+| Cuántos niños cambian de diagnóstico | [`scripts/reclasificacion.py`](scripts/reclasificacion.py) |
+| Pruebas | [`tests/`](tests/) (contra la ENDES y del padrón) |
 | Conversaciones con usuarios | [`docs/research/`](docs/research/README.md) |
 | Diagrama de arquitectura | [`docs/arquitectura.md`](docs/arquitectura.md) |
 
@@ -39,18 +41,29 @@
 
 En abril de 2024 el MINSA adoptó la guía de la OMS para diagnosticar anemia (RM 251-2024-MINSA). Cambiaron dos cosas a la vez: la fórmula que ajusta la hemoglobina según la altitud y el punto de corte para niñas y niños de 6 a 23 meses.
 
-Con los microdatos de la ENDES 2025, la anemia en niñas y niños de 6 a 35 meses pasa de **43,4 %** (criterio anterior, RM 363-2022) a **34,9 %** (criterio vigente). Pero el cambio no es parejo: **sube entre 7 y 11 puntos entre 500 y 2499 m y baja entre 14 y 34 puntos por encima de 3000 m** ([análisis de la Tarea 3](https://github.com/fampueroc/anemia-altitud-peru)). Hay niños que antes no figuraban con anemia y ahora sí, y otros al revés. De ese diagnóstico depende quién recibe suplementación con hierro.
+Con los microdatos de la ENDES 2025, la anemia en niñas y niños de 6 a 35 meses pasa de **43,4 %** (criterio anterior, RM 363-2022) a **34,9 %** (criterio vigente). Pero el cambio no es parejo: **sube entre 7 y 11 puntos entre 500 y 2499 m y baja entre 14 y 34 puntos por encima de 3000 m** ([análisis de la Tarea 3](https://github.com/fampueroc/anemia-altitud-peru)). Hay niños que antes no figuraban con anemia y ahora sí, y otros al revés. Del diagnóstico depende el seguimiento que recibe cada niño.
 
 - **Quién lo sufre:** *(en construcción: el rol preciso, a partir de las conversaciones)* quienes hacen el tamizaje de hemoglobina en los establecimientos del primer nivel de atención por encima de los 500 m, y quienes consolidan esas cifras en las redes de salud y las DIRESA.
-- **Cuánto le cuesta:** *(en construcción)* en errores, cuántos niños cambian de diagnóstico por franja de altitud (ENDES 2025); en horas, lo que digan las conversaciones.
+- **Cuánto le cuesta, en diagnósticos que cambian** ([`scripts/reclasificacion.py`](scripts/reclasificacion.py), ENDES 2025, niñas y niños de 6 a 35 meses, IC 95 % con el diseño muestral):
+
+  | Dónde | Cambia de diagnóstico | Ahora con anemia | Ahora sin anemia |
+  |---|---:|---:|---:|
+  | Perú | 12,1 % (11,3–12,9) | 1,8 % | 10,3 % |
+  | 500–999 m | 9,4 % | 8,2 % | 1,2 % |
+  | 1000–2499 m | 9,4 % | 8,9 % | 0,5 % |
+  | 3500 m o más | 24,5 % | 0,0 % | 24,5 % |
+  | Puno | 22,9 % | 1,8 % | 21,1 % |
+
+  Es decir, **en el Perú, 1 de cada 8 niños cambia de diagnóstico con la norma vigente**, y la dirección depende de la altitud. Es descriptivo: no dice cuál norma es la correcta. Tablas completas: [`reclasificacion_altitud_2025.csv`](data/procesados/reclasificacion_altitud_2025.csv) y [`reclasificacion_departamento_2025.csv`](data/procesados/reclasificacion_departamento_2025.csv).
+- **Cuánto le cuesta, en horas:** *(en construcción: con las conversaciones)*.
 - **Cómo lo resuelve hoy:** *(en construcción: con las conversaciones)*.
 - **Evidencia:** notas de 3 conversaciones con usuarios potenciales en [`docs/research/`](docs/research/README.md).
 
 ## 4. Solución e insight *(en construcción)*
 
 - **Un niño:** se ingresa la hemoglobina, la edad y la altitud, y la app da el diagnóstico con los dos criterios y la hemoglobina ajustada.
-- **Revisa tu padrón:** el establecimiento sube su Excel o CSV de tamizajes, y la app reclasifica a cada niño, marca quién cambia de diagnóstico y descarga un reporte. El demo usa datos sintéticos.
-- **El Perú:** un mapa y una tabla, con la ENDES, de dónde y cuánto cambia el diagnóstico.
+- **Revisa tu padrón:** el establecimiento sube su Excel o CSV de tamizajes, y la app reclasifica a cada niño, pone primero a los que cambian de diagnóstico y descarga un reporte en Excel. Los padrones de ejemplo ([Puno](data/ejemplo/padron_puno.csv) y [Cajamarca, valle](data/ejemplo/padron_cajamarca.csv)) son 60 niños reales de la ENDES 2025, con códigos ficticios ([`scripts/padron_ejemplo.py`](scripts/padron_ejemplo.py)). En Puno, 10 de 60 niños dejan de tener anemia; en el valle de Cajamarca, 5 de 60 pasan a tenerla.
+- **El Perú:** un gráfico por altitud y un mapa de Folium, con la ENDES, de dónde y cuánto cambia el diagnóstico.
 
 **Insight:** el criterio nuevo no "baja la anemia" en todo el país; mueve el diagnóstico en las dos direcciones según la altitud. Sin una herramienta, ese cambio no se ve en el padrón del establecimiento.
 
@@ -94,7 +107,7 @@ Propuesta inicial, por validar con las conversaciones (máximo tres planes):
 | Herramienta | Sesión | Archivo | Por qué esta |
 |---|---|---|---|
 | Dashboard en Streamlit | 05 | [`app/app.py`](app/app.py) | Quien la usa es personal de salud, no programador: necesita un formulario y un botón para subir su padrón. |
-| Mapa con Folium | 06 | *(en construcción)* | El problema es territorial: el cambio de diagnóstico depende de la altitud donde vive el niño. |
+| Mapa con Folium | 06 | [`app/app.py`](app/app.py) (pestaña "El Perú") | El problema es territorial: el cambio de diagnóstico depende de la altitud donde vive el niño. |
 
 **Para preparar los datos:**
 
