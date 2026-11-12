@@ -24,7 +24,7 @@
 
 ## 2. Founder
 
-*(Foto: en construcción.)*
+<img src="docs/founder.jpeg" alt="Fiorella Ampuero" width="260">
 
 **Fiorella Ampuero.** Trabajo en investigación para el desarrollo, con interés en el desarrollo infantil temprano. En la Tarea 3 del curso recalculé la anemia infantil de la ENDES 2025 con los dos criterios del MINSA y validé mis cifras contra las publicadas por el INEI ([anemia-altitud-peru](https://github.com/fampueroc/anemia-altitud-peru)). Este es un proyecto personal: no representa a mi empleador.
 
