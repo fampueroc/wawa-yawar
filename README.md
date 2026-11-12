@@ -2,14 +2,14 @@
 
 *Wawa yawar*: "la sangre del niño", en quechua.
 
-> **Estado: en desarrollo.** Proyecto final de la Diplomatura de Especialización en Ciencia de Datos para las Ciencias Sociales y la Gestión Pública (Q-Lab PUCP), [issue #204](https://github.com/d2cml-ai/Data-Science-Python/issues/204). Presentación: miércoles 11 de noviembre de 2026. Las secciones marcadas *(en construcción)* se completan antes de esa fecha.
+> Proyecto final de la Diplomatura de Especialización en Ciencia de Datos para las Ciencias Sociales y la Gestión Pública (Q-Lab PUCP), [issue #204](https://github.com/d2cml-ai/Data-Science-Python/issues/204). Presentación: miércoles 11 de noviembre de 2026.
 
 ## Entregables
 
 | Entregable | Enlace |
 |---|---|
 | Demo (URL pública) | **https://wawa-yawar.streamlit.app/** |
-| Video de respaldo (60–90 s) | *(en construcción)* |
+| Video de respaldo (85 s) | [`docs/video/wawa_yawar.mp4`](docs/video/wawa_yawar.mp4) (subtítulos: [`wawa_yawar.srt`](docs/video/wawa_yawar.srt)) |
 | Código de la app | [`app/app.py`](app/app.py) |
 | Criterios de diagnóstico | [`app/wawa_yawar/criterios.py`](app/wawa_yawar/criterios.py) |
 | Revisión del padrón | [`app/wawa_yawar/padron.py`](app/wawa_yawar/padron.py) |
@@ -37,13 +37,13 @@
 | Diseño | Claude Code propone la interfaz en Streamlit y arma el video (grabación de la app con Playwright, voz clonada y subtítulos); yo decido el flujo y los textos, y reviso cada captura |
 | Ventas | Yo: conversaciones con usuarios y presentación; Claude Code redacta borradores (el mensaje para pedir las conversaciones, el guion del video) que yo corrijo |
 
-## 3. Problema *(en construcción)*
+## 3. Problema
 
 En abril de 2024 el MINSA adoptó la guía de la OMS para diagnosticar anemia (RM 251-2024-MINSA). Cambiaron dos cosas a la vez: la fórmula que ajusta la hemoglobina según la altitud y el punto de corte para niñas y niños de 6 a 23 meses.
 
 Con los microdatos de la ENDES 2025, la anemia en niñas y niños de 6 a 35 meses pasa de **43,4 %** (criterio anterior, RM 363-2022) a **34,9 %** (criterio vigente). Pero el cambio no es parejo: **sube entre 7 y 11 puntos entre 500 y 2499 m y baja entre 14 y 34 puntos por encima de 3000 m** ([análisis de la Tarea 3](https://github.com/fampueroc/anemia-altitud-peru)). Hay niños que antes no figuraban con anemia y ahora sí, y otros al revés. Del diagnóstico depende el seguimiento que recibe cada niño.
 
-- **Quién lo sufre:** *(en construcción: el rol preciso, a partir de las conversaciones)* quienes hacen el tamizaje de hemoglobina en los establecimientos del primer nivel de atención por encima de los 500 m, y quienes consolidan esas cifras en las redes de salud y las DIRESA.
+- **Quién lo sufre:** quienes hacen el tamizaje de hemoglobina en los establecimientos del primer nivel de atención por encima de los 500 m, y quienes consolidan esas cifras en las redes de salud y las DIRESA.
 - **Cuánto le cuesta, en diagnósticos que cambian** ([`scripts/reclasificacion.py`](scripts/reclasificacion.py), ENDES 2025, niñas y niños de 6 a 35 meses, IC 95 % con el diseño muestral):
 
   | Dónde | Cambia de diagnóstico | Ahora con anemia | Ahora sin anemia |
@@ -55,11 +55,11 @@ Con los microdatos de la ENDES 2025, la anemia en niñas y niños de 6 a 35 mese
   | Puno | 22,9 % | 1,8 % | 21,1 % |
 
   Es decir, **en el Perú, 1 de cada 8 niños cambia de diagnóstico con la norma vigente**, y la dirección depende de la altitud. Es descriptivo: no dice cuál norma es la correcta. Tablas completas: [`reclasificacion_altitud_2025.csv`](data/procesados/reclasificacion_altitud_2025.csv) y [`reclasificacion_departamento_2025.csv`](data/procesados/reclasificacion_departamento_2025.csv).
-- **Cuánto le cuesta, en horas:** *(en construcción: con las conversaciones)*.
-- **Cómo lo resuelve hoy:** *(en construcción: con las conversaciones)*.
-- **Evidencia:** notas de 3 conversaciones con usuarios potenciales en [`docs/research/`](docs/research/README.md).
+- **Cuánto le cuesta, en horas:** todavía no lo he medido. No conseguí conversar con quien hace el tamizaje; es lo primero que validaría después de la presentación, preguntando cuánto toma registrar, corregir por altitud y consolidar los tamizajes del mes.
+- **Cómo lo resuelve hoy:** en la única conversación que tuve, con un médico, el ajuste se recuerda como "una resta" con un factor según la altura, sin distinguir entre la norma anterior y la vigente, y se aprende como teoría: "solo lo mencionan porque en Lima no se hace pues". Es una sola persona y no permite generalizar.
+- **Evidencia:** [`docs/research/`](docs/research/README.md). Una conversación con un médico; un intento con una técnica de enfermería que no trabajó con niños; y otros dos mensajes sin respuesta. La conversación con quien hace el tamizaje en la sierra queda pendiente.
 
-## 4. Solución e insight *(en construcción)*
+## 4. Solución e insight
 
 - **Un niño:** se ingresa la hemoglobina, la edad y la altitud, y la app da el diagnóstico con los dos criterios y la hemoglobina ajustada.
 - **Revisa tu padrón:** el establecimiento sube su Excel o CSV de tamizajes, y la app reclasifica a cada niño, pone primero a los que cambian de diagnóstico y descarga un reporte en Excel. Los padrones de ejemplo ([Puno](data/ejemplo/padron_puno.csv) y [Cajamarca, valle](data/ejemplo/padron_cajamarca.csv)) son 60 niños reales de la ENDES 2025, con códigos ficticios ([`scripts/padron_ejemplo.py`](scripts/padron_ejemplo.py)). En Puno, 10 de 60 niños dejan de tener anemia; en el valle de Cajamarca, 5 de 60 pasan a tenerla.
@@ -76,10 +76,10 @@ Con los microdatos de la ENDES 2025, la anemia en niñas y niños de 6 a 35 mese
 
 Fuentes completas en la [revisión de literatura de la Tarea 3](https://github.com/fampueroc/anemia-altitud-peru/blob/main/docs/literatura.md).
 
-## 6. Demo *(en construcción)*
+## 6. Demo
 
 - **URL pública:** https://wawa-yawar.streamlit.app/ (Streamlit Community Cloud)
-- **Video de respaldo:** *(en construcción).*
+- **Video de respaldo:** [`docs/video/wawa_yawar.mp4`](docs/video/wawa_yawar.mp4), 85 s, la app pública en uso con mi voz clonada y subtítulos ([cómo se hizo](video/README.md)).
 - **Correr en local:**
 
   ```bash

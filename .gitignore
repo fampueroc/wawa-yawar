@@ -10,3 +10,7 @@ data/originales/*
 
 # video: audio, grabación y salidas (se generan con video/*.py)
 video/salidas/
+
+# Evidencia de contacto: solo se suben los .txt sin nombres (los audios y los zip quedan en local)
+docs/research/intentos/*
+!docs/research/intentos/*.txt

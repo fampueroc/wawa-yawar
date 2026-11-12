@@ -1,0 +1,28 @@
+Los mensajes y las llamadas están cifrados de extremo a extremo. Nadie fuera de este chat, ni siquiera WhatsApp, puede leerlos ni escucharlos.
+[11/11/26, 2:19:54 PM] - Los mensajes y las llamadas están cifrados de extremo a extremo. Nadie fuera de este chat, ni siquiera WhatsApp, puede leerlos ni escucharlos. Toca para obtener más información.
+[11/11/26, 2:20:17 PM] Tú: hola (NOMBRE C) que tall, soy (NOMBRE B) la amiga de (nombre D)
+[11/11/26, 2:21:20 PM] Tú: recordé que trabajas en salud, quería pedirte un favor, es solo responder algunas preguntas sobre diagnóstico de anemia en caso hayas tenido alguna exposición sobre el tema, aquí te dejo las preguntas puedes responder las que puedas 🙏🏻🙏🏻
+[11/11/26, 2:21:43 PM] Tú: aquí va el contexto: estoy haciendo un trabajo en el diplomado que estoy llevando y mi trabajo es sobre el diagnóstico de anemia en niños desde 6 meses de RN en adelante. En tu caso, alguna vez te ha tocado hacer ese diagnóstico?, o tienes algun conocimiento de como lo han hecho?, me sería de mucha ayuda.  En caso sí, te compartiré algunas preguntas y me puedes responder por audio si te es más rápido por cada bloque:
+Bloque 1
+- 1. ¿Cuál es tu rol y en qué establecimiento o institución haz presenciado o tienes conocimiento de esto? ¿En qué ciudad o departamento te encontrabas?  ¿Sabes como se realiza este diagnostico en alguna zona con un nivel de altura distinto? 
+- 2. Cuéntame cómo fue el último tamizaje de hemoglobina que hiciste, revisaste o presenciaste, paso a paso: ¿qué equipo usan, dónde lo anotan, aplican el ajuste por altitud?
+- 3. Ese ajuste, ¿se calcula a mano, con una tabla impresa, con el equipo o con el HIS?
+- 4. ¿Cuánto tiempo les toma registrar y consolidar los tamizajes del mes?
+Bloque 2
+- 5. ¿Sabes si existe algún cambio de criterio sobre cómo medirla? ¿Recibieron capacitación o una tabla nueva?
+- 6. ¿Recuerdas algún caso en que el diagnóstico de un niño cambió o generó dudas con la norma nueva? ¿Qué pasó?
+- 7. ¿Alguna vez una cifra de anemia del establecimiento o de la red no cuadró, y hubo que revisarla? ¿Cuánto tiempo tomó?
+Bloque final
+* 8. Si pudieras arreglar una sola cosa del proceso de diagnóstico y registro, ¿cuál sería?
+* 9. ¿Quién decide qué herramientas usan en el establecimiento? ¿Han pagado alguna vez por un software o sistema?
+[11/11/26, 2:21:48 PM] Tú: <sticker omitido>
+[11/11/26, 2:55:48 PM] (NOMBRE C) : Hola (NOMBRE B) como estas
+[11/11/26, 2:57:55 PM] Tú: hola (NOMBRE C)yy que talll
+[11/11/26, 2:58:08 PM] Tú: tu ayuda por favor, puedes responder respecto a lo que sepas
+[11/11/26, 2:58:12 PM] Tú: 🙏🏻
+[11/11/26, 3:00:35 PM] (NOMBRE C) : <mensaje de voz omitido>
+[11/11/26, 3:03:55 PM] Tú: Oh oki oki me podrías igual mandar un audio donde mencionas tu rol, puesto, y donde hayas visto esos casos
+[11/11/26, 3:04:04 PM] Tú: Hospitales clínicas, postas? etc
+[11/11/26, 3:14:20 PM] (NOMBRE C) : El tiempo que trabaje en el área de ginecología, solo vi gestantes fue en (una clínica privada) en ese tiempo trabajé como técnica de enfermería y lo que hacía era apoyo al ginecólogo en trabajos de parto, atención a las gestantes en su traslado.
+[11/11/26, 3:16:24 PM] Tú:¿Me autorizas a usar tus respuestas en mi trabajo sin tu nombre, solo como "médico(a)"? Y si conoces a alguien que trabaje en un puesto o centro de salud de la sierra, ¿me pasarías su contacto?
+[11/11/26, 3:18:38 PM] (NOMBRE C) : ok conforme, compartiré tus preguntas con un amigo q a estudiado medicina el si de hecho q ha rotado con niños
